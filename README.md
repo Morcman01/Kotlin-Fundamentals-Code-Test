@@ -1,11 +1,6 @@
 # Kotlin Fundamentals Code Test
 
-A comprehensive coding challenge for learning Kotlin fundamentals, covering:
-- Variables and basic types
-- Functions and default parameters
-- Conditional statements (if-else, when)
-- Loops (for, while)
-- Collections (List, Set, Map)
+Welcome to the Kotlin Fundamentals Code Test! This test is designed to assess your understanding of basic Kotlin programming concepts through a series of coding exercises. You will implement functions that cover variables, functions, conditionals, loops, and collections (lists, sets, maps).
 
 ### Topics Covered
 
@@ -48,9 +43,9 @@ A comprehensive coding challenge for learning Kotlin fundamentals, covering:
 
 ### How to Use
 
-1. **Setup**: Share the `Main.kt` file with members
-2. **Instructions**: Have them complete the TODO functions
-3. **Testing**: They can run tests with:
+1. **Setup**: Clone this repository
+2. **Instructions**: Complete all TODO functions
+3. **Testing**: run the test by running unit tests or run gradle command tests with:
    ```bash
    ./gradlew test --tests com.gdgoc.unesa.KotlinFundamentalsUnitTest
    ```
@@ -70,21 +65,6 @@ A comprehensive coding challenge for learning Kotlin fundamentals, covering:
 - Start with easier sections (Variables, Functions) and progress to harder ones
 - Use Kotlin's built-in functions when appropriate (e.g., `filter`, `map`, `sum`)
 - Test frequently to catch errors early
-
-### Example Solution Pattern
-
-```kotlin
-// Before:
-fun sumTwoNumbers(a: Int, b: Int): Int {
-    // TODO: Implement this function
-    return 0
-}
-
-// After:
-fun sumTwoNumbers(a: Int, b: Int): Int {
-    return a + b
-}
-```
 
 ### Running Tests
 
