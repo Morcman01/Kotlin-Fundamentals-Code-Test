@@ -16,7 +16,9 @@ class KotlinFundamentalsTest {
      */
     fun sumTwoNumbers(a: Int, b: Int): Int {
         // TODO: Implement this function
-        return 0
+        val angkaSatu: Int = a
+        val angkaDua: Int = b
+        return angkaSatu + angkaDua
     }
 
     /**
@@ -25,7 +27,7 @@ class KotlinFundamentalsTest {
      */
     fun getFullName(firstName: String, lastName: String): String {
         // TODO: Implement this function
-        return ""
+        return "$firstName $lastName"
     }
 
     /**
@@ -35,7 +37,7 @@ class KotlinFundamentalsTest {
      */
     fun celsiusToFahrenheit(celsius: Double): Double {
         // TODO: Implement this function
-        return 0.0
+        return celsius * 9/5 + 32
     }
 
     // ======================
@@ -48,7 +50,7 @@ class KotlinFundamentalsTest {
      */
     fun calculateRectangleArea(width: Int, height: Int): Int {
         // TODO: Implement this function
-        return 0
+        return width * height
     }
 
     /**
@@ -59,7 +61,7 @@ class KotlinFundamentalsTest {
      */
     fun calculatePrice(price: Double, discount: Double = 0.0): Double {
         // TODO: Implement this function
-        return 0.0
+        return price - price * discount
     }
 
     /**
@@ -69,7 +71,7 @@ class KotlinFundamentalsTest {
      */
     fun divideWithRemainder(dividend: Int, divisor: Int): Pair<Int, Int> {
         // TODO: Implement this function
-        return Pair(0, 0)
+        return Pair(dividend / divisor, dividend % divisor)
     }
 
     // ======================
@@ -87,7 +89,17 @@ class KotlinFundamentalsTest {
      */
     fun getGrade(score: Int): String {
         // TODO: Implement this function
-        return ""
+        return if(score < 60){
+            "F"
+        } else if (score in 60 .. 69){
+            "D"
+        } else if (score in 70..79){
+            "C"
+        } else if (score in 80 .. 89){
+            "B"
+        } else{
+            "A"
+        }
     }
 
     /**
@@ -97,7 +109,13 @@ class KotlinFundamentalsTest {
      */
     fun checkNumber(number: Int): String {
         // TODO: Implement this function
-        return ""
+        return if (number * -1 < 0){
+            "Positive"
+        } else if (number * -1 > 0){
+            "Negative"
+        } else{
+            "Zero"
+        }
     }
 
     /**
@@ -108,7 +126,13 @@ class KotlinFundamentalsTest {
      */
     fun isLeapYear(year: Int): Boolean {
         // TODO: Implement this function
-        return false
+        return if(year % 4 == 0){
+            if(year % 100 != 0)
+            { true } else
+            {
+                year % 400 == 0
+            }
+        } else { false }
     }
 
     // ======================
@@ -122,7 +146,11 @@ class KotlinFundamentalsTest {
      */
     fun factorial(n: Int): Long {
         // TODO: Implement this function
-        return 0L
+        var sum: Long = 1
+        for(i in 1 .. n){
+            sum *= i
+        }
+        return sum
     }
 
     /**
@@ -131,7 +159,13 @@ class KotlinFundamentalsTest {
      */
     fun countEvenNumbers(start: Int, end: Int): Int {
         // TODO: Implement this function
-        return 0
+        var hitung = 0
+        for(i in start .. end){
+            if(i % 2 == 0){
+                hitung++
+            }
+        }
+        return hitung
     }
 
     /**
@@ -140,7 +174,13 @@ class KotlinFundamentalsTest {
      */
     fun sumUpToN(n: Int): Int {
         // TODO: Implement this function
-        return 0
+        var count = 1
+        var sum = 0
+        while(count <= n){
+            sum += count
+            count++
+        }
+        return sum
     }
 
     // ======================
@@ -153,7 +193,7 @@ class KotlinFundamentalsTest {
      */
     fun sumList(numbers: List<Int>): Int {
         // TODO: Implement this function
-        return 0
+        return numbers.sum()
     }
 
     /**
@@ -163,7 +203,7 @@ class KotlinFundamentalsTest {
      */
     fun filterEvenNumbers(numbers: List<Int>): List<Int> {
         // TODO: Implement this function
-        return emptyList()
+        return numbers.filter {it % 2 == 0}
     }
 
     /**
@@ -173,7 +213,7 @@ class KotlinFundamentalsTest {
      */
     fun squareNumbers(numbers: List<Int>): List<Int> {
         // TODO: Implement this function
-        return emptyList()
+        return numbers.map {it * it}
     }
 
     /**
@@ -183,7 +223,7 @@ class KotlinFundamentalsTest {
      */
     fun findMax(numbers: List<Int>): Int? {
         // TODO: Implement this function
-        return null
+        return numbers.maxOrNull()
     }
 
     // ======================
@@ -196,7 +236,7 @@ class KotlinFundamentalsTest {
      */
     fun removeDuplicates(numbers: List<Int>): List<Int> {
         // TODO: Implement this function
-        return emptyList()
+        return numbers.toSet().toList()
     }
 
     /**
@@ -205,7 +245,7 @@ class KotlinFundamentalsTest {
      */
     fun unionSets(set1: Set<Int>, set2: Set<Int>): Set<Int> {
         // TODO: Implement this function
-        return emptySet()
+        return set1 union set2
     }
 
     /**
@@ -215,7 +255,7 @@ class KotlinFundamentalsTest {
      */
     fun intersectSets(set1: Set<Int>, set2: Set<Int>): Set<Int> {
         // TODO: Implement this function
-        return emptySet()
+        return set1 intersect set2
     }
 
     // ======================
@@ -229,7 +269,7 @@ class KotlinFundamentalsTest {
      */
     fun wordFrequency(words: List<String>): Map<String, Int> {
         // TODO: Implement this function
-        return emptyMap()
+        return words.groupingBy {it}.eachCount()
     }
 
     /**
@@ -239,7 +279,7 @@ class KotlinFundamentalsTest {
      */
     fun createGradeBook(names: List<String>, scores: List<Int>): Map<String, Int> {
         // TODO: Implement this function
-        return emptyMap()
+        return names.zip(scores).toMap()
     }
 
     /**
@@ -249,7 +289,7 @@ class KotlinFundamentalsTest {
      */
     fun calculateCartTotal(prices: Map<String, Double>, quantities: Map<String, Int>): Double {
         // TODO: Implement this function
-        return 0.0
+        return prices.entries.sumOf { (item, price) -> price * (quantities[item] ?: 0)}
     }
 
     /**
@@ -259,6 +299,6 @@ class KotlinFundamentalsTest {
      */
     fun invertMap(map: Map<String, Int>): Map<Int, String> {
         // TODO: Implement this function
-        return emptyMap()
+        return map.entries.associate{(key, value) -> value to key}
     }
 }
